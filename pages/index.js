@@ -1,18 +1,25 @@
-import React from 'react'
-import Greet from '@/components/greet'
-import Button from '@/components/Button'
-import List from '@/components/List'
+import React from "react";
+import Greet from "@/components/greet";
+import Button from "@/components/Button";
+import List from "@/components/List";
+import { useState } from "react";
 
 const index = () => {
-  const arr = ["This is an item", "This is an item 2", "This is an item 3"]
+  const [arr, setArr] = useState(["This is an item", "This is an item 2", "This is an item 3"]);
+
+  const buttonClick = () => {
+    setArr([...arr , "New Item"]);
+  };
+
+
   return (
     <div>
-      <Greet/>
+      <Greet />
 
-      <List arr={arr}/>
-      <Button text="Add"/>
+      <List arr={arr} />
+      <Button click={buttonClick}> Add</Button>
     </div>
-  )
-}
+  );
+};
 
-export default index
+export default index;
