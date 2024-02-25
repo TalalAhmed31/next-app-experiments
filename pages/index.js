@@ -11,7 +11,6 @@ const index = () => {
     setArr([...arr , "New Item"]);
   };
 
-
   return (
   
     <div>
